@@ -1,0 +1,31 @@
+# Initial view of data (cleaned, i.e., no NAs)
+setwd("~/wd/ARTHUR_data")
+dir()
+ARTHUR2017=read.csv("ARTHUR_2017_cleandata.csv")
+head(ARTHUR2017)
+str(ARTHUR2017)
+attach(ARTHUR2017)
+posix.dates=as.POSIXlt(DateTime_EST,format="%m/%d/%Y %H:%M") # convert data to POSIX date/time values so they can be plotted
+
+# Graph raw data
+par(mfrow= c(1,1))
+Battery <- plot(x=posix.dates,y=ARTHUR2017$Battery_V_ed,pch=16,ylab="Profiler Battery (V)",xlab="Time")
+Battery
+PAR1 <- plot(x=posix.dates,y=ARTHUR2017$PAR1_umol.s.m2_ed,pch=16,ylab="PAR1 (umol/s*m2)",xlab="Time")
+PAR
+PAR2 <- plot(x=posix.dates,y=ARTHUR2017$PAR2_umol.s.m2_ed,pch=16,ylab="PAR2 (umol/s*m2)",xlab="Time")
+PAR2
+Temp <- plot(x=posix.dates,y=ARTHUR2017$Temperature_C_ed,pch=16,ylab="Temperature (*C)",xlab="Time")
+Temp
+YSITurb <-plot(x=posix.dates,y=ARTHUR2017$YSI_Turbidity_NTU_ed,pch=16,ylab="YSI Turbidity (NTU)",xlab="Time")
+YSI_Turb
+DO <- plot(x=posix.dates,y=ARTHUR2017$DO_mg.L_ed,pch=16,ylab="DO (mg/L)",xlab="Time")
+DO
+CHLa <- plot(x=posix.dates,y=ARTHUR2017$Chlorophylla_RFU_ed,pch=16,ylab="Chlorophyll-a (RFU)",xlab="Time")
+CHLa
+Phyco <- plot(x=posix.dates,y=ARTHUR2017$Phycocyanin_RFU_ed,pch=16,ylab="Phycocyanin (RFU)",xlab="Time")
+Phyco
+CDOM <- plot(x=posix.dates,y=ARTHUR2017$CDOM_RFU_ed,pch=16,ylab="CDOM (RFU)",xlab="Time")
+CDOM
+C6_Turb <- plot(x=posix.dates,y=ARTHUR2017$C6_Turbidity_NTU_ed,pch=16,ylab="C6 Turbidity (NTU)",xlab="Time")
+C6 Turb
