@@ -28,4 +28,4 @@ Phyco
 CDOM <- plot(x=posix.dates,y=ARTHUR2017$CDOM_RFU_ed,pch=16,ylab="CDOM (RFU)",xlab="Time")
 CDOM
 C6_Turb <- plot(x=posix.dates,y=ARTHUR2017$C6_Turbidity_NTU_ed,pch=16,ylab="C6 Turbidity (NTU)",xlab="Time")
-C6 Turb
+C6_Turb
